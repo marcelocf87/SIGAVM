@@ -17,5 +17,11 @@ class DatabaseSeeder extends Seeder
         // $this->call(UserTableSeeder::class);
 
         Model::reguard();
+
+        factory('App\User')->create([
+            'name' => 'admin',
+            'email' => 'admin@admin',
+            'password' => Hash::make("admin")
+        ]);
     }
 }
