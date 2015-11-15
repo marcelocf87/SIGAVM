@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Instituicao;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,7 +17,7 @@ class InstituicaoController extends Controller
      */
     public function index()
     {
-        return view('instituicao.create');
+        return view('instituicao.index');
     }
 
     /**
@@ -26,7 +27,7 @@ class InstituicaoController extends Controller
      */
     public function create()
     {
-        //
+        return view('instituicao.create');
     }
 
     /**
@@ -37,7 +38,9 @@ class InstituicaoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+
+        Instituicao::create($input);
     }
 
     /**
@@ -59,7 +62,9 @@ class InstituicaoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $instituicao = instituicao::find($id);
+
+        return view('instituicao.edit', array('instituicao' => $instituicao));
     }
 
     /**
@@ -71,7 +76,11 @@ class InstituicaoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+
+        $instituicao = instituicao::find($id);
+        $instituicao->fill($input);
+        $instituicao->save();
     }
 
     /**
@@ -82,6 +91,8 @@ class InstituicaoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $instituicao = instituicao::findOrFail($id);
+        $instituicao->delete();
+        return redirect('/instituicao');
     }
 }

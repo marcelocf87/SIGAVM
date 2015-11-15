@@ -13,6 +13,6 @@
 
 Route::resource('/', 'LoginController');
 
-Route::resource('cadastro/membros', 'MembrosController');
+Route::resource('membros', 'MembrosController');
 
-Route::resource('cadastro/instituicao', 'InstituicaoController');
+Route::resource('instituicao', 'InstituicaoController');

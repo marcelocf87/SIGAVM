@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Membro;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,7 +17,7 @@ class MembrosController extends Controller
      */
     public function index()
     {
-        //
+        return view('membros.index');
     }
 
     /**
@@ -37,7 +38,9 @@ class MembrosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+
+        Membro::create($input);
     }
 
     /**
@@ -59,7 +62,9 @@ class MembrosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $membro = Membro::find($id);
+
+        return view('membro.edit', array('Membro' => $membro));
     }
 
     /**
@@ -71,7 +76,11 @@ class MembrosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+
+        $membro = Membro::find($id);
+        $membro->fill($input);
+        $membro->save();
     }
 
     /**
