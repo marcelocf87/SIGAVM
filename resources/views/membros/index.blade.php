@@ -3,7 +3,9 @@
 @section('Content')
 
     <div class="col-xs-8 col-xs-offset-4">
-        <h1> Listagem de Membro </h1>
+        <br>
+        <h1> Listagem de Membros </h1>
+        <br>
     </div>
 
     <div class="table-responsive">

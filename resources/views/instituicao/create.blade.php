@@ -5,34 +5,34 @@
 
 		<div class="row">
 			<!-- Cadastro -->
-			<div class="col-xs-4 col-xs-offset-4">
-				<h1> Cadastro Instituições </h1>
+			<div class="col-xs-5 col-xs-offset-4">
+				<h1> Cadastro de Instituições </h1>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-xs-12">
-				<legend>Dados da Instituição de Ensino</legend>
 				<!--Inicio do Formulário-->
 				<form class="form-horizontal" method="post">
-					<!--Nome do Cadêmico-->
+					<!--Nome do Acadêmico-->
 					<div class="form-group">
+						<legend>Dados da Instituição de Ensino</legend>
 						<label for="nomeinst" class="col-xs-2 control-label"><p class="text-left">Nome da Instuição de Ensino:</p></label>
 						<div class="col-xs-10">
-							<input type="text" class="form-control" name="nomeinst" placeholder="Insituição de Ensino" />
+							<input type="text" class="form-control" name="nomeinst" placeholder="Ex.: Centro Universitário... / Universidade Federal..." />
 						</div>
 					</div>
 
 					<!--Telefone -->
 					<div class="form-group">
-						<label for="emailinst" class="col-xs-2 control-label"><p class="text-left">Email:</p></label>
+						<label for="emailinst" class="col-xs-2 control-label"><p class="text-left">E-mail:</p></label>
 						<div class="col-xs-4">
-							<input type="text" class="form-control" name="emailinst" placeholder="Email" />
+							<input type="text" class="form-control" name="emailinst" placeholder="Ex.: email@outlook.com / email@gmail.com" />
 						</div>
 
 						<label for="telinst" class="col-xs-1">Telefone:</label>
 						<div class="col-xs-2">
-							<input type="text" class="form-control" name="telinst" placeholder="Telefone" />
+							<input type="text" class="form-control" name="telinst" placeholder="Ex.: (000)0000-0000" />
 						</div>
 					</div>
 

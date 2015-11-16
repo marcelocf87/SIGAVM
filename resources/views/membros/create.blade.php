@@ -3,10 +3,11 @@
 @section('Content')
 	<div class="container">
 
+
 		<div class="row">
 			<!-- Cadastro -->
 			<div class="col-xs-4 col-xs-offset-4">
-				<h1> Cadastro Associados </h1>
+				<h1> Cadastro de Membros </h1>
 			</div>
 		</div>
 
@@ -32,33 +33,32 @@
 						
 						<label for="org" class="col-xs-1">Orgão Emissor</label>
 						<div class="col-xs-2">
-							<input type="text" class="form-control" name="org" placeholder="Orgão Emissor">
+							<input type="text" class="form-control" name="org" placeholder="Ex.: SSP / MD">
 						</div>
 						
 						<label for="cpf" class="col-xs-1">CPF:</label>
 						<div class="col-xs-2">
-							<input type="text" class="form-control" name="cpf" placeholder="000.000.000-00" size=14 />
+							<input type="text" class="form-control" name="cpf" placeholder="Ex.: 000.000.000-00" size=14 />
 						</div>
 					</div>
 
 					<!--EMAIL E CELULAR -->
 					<div class="form-group">
-						<label for="email" class="col-xs-2 control-label"><p class="text-left">Email:</p></label>
+						<label for="email" class="col-xs-2 control-label"><p class="text-left">E-mail:</p></label>
 						<div class="col-xs-4">
-							<input type="text" class="form-control" name="email" placeholder="Email" size=40/>
+							<input type="text" class="form-control" name="email" placeholder="Ex.: email@outlook.com / email@gmail.com" size=40/>
 						</div>
 
 						<label for="cel" class="col-xs-1">Celular:</label>
 						<div class="col-xs-2">
-							<input type="text" class="form-control" name="cel" placeholder="(000)0000-0000" size=14/>
+							<input type="text" class="form-control" name="cel" placeholder="Ex.: (000)0000-0000" size=14/>
 						</div>
 						<label for="emer" class="col-xs-1">Contato Emergência:</label>
 						<div class="col-xs-2">
-							<input type="text" class="form-control" name="emer" placeholder="(000)0000-0000" size=14/>
+							<input type="text" class="form-control" name="emer" placeholder="Ex.: (000)0000-0000" size=14/>
 						</div>
 					</div>
 
-					
 					<!-- Onde Estuda-->
 					<div class="form-group"> 
 						<label for="tipo" class="col-xs-2 control-label"> <p class="text-left">Instituição:</p></label>
