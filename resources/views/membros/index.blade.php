@@ -26,16 +26,17 @@
     </tr>
     </thead>
     <tbody>
-{{--    @foreach($membros as $membro)--}}
+   @foreach($membros as $membro)
         <tr>
             <th scope="row">1</th>
-            {{--<td>{{ $membro->id }}</td>--}}
-            {{--<td>{{ $membro->rg }}</td>--}}
-            {{--<td>{{ $membro->cpf }}</td>--}}
-            {{--<td>{{ $membro->fone }}</td>--}}
-            {{--<td>{{ $membro->foneEmerg }}</td>--}}
-            {{--<td>{{ $membro->id_Inst }}</td>--}}
-            {{--<td>{{ $membro->ativo }}</td>--}}
+            <td>{{ $membro->id }}</td>
+            <td>{{$membro->nome}}</td>
+            <td>{{ $membro->rg }}</td>
+            <td>{{ $membro->cpf }}</td>
+            <td>{{ $membro->fone }}</td>
+           <td>{{ $membro->foneEmerg }}</td>
+            <td>{{ $membro->id_Inst }}</td>
+            <td>{{ $membro->ativo }}</td>
             <td>001</td>
             <td>Wallison Storck Coelho</td>
             <td>1234567</td>
@@ -47,7 +48,7 @@
             <td>2012/1</td>
             <td>Ativo</td>
         </tr>
-    {{--@endforeach--}}
+    @endforeach
     <tr>
         <th scope="row">2</th>
         <td>Jacob</td>
