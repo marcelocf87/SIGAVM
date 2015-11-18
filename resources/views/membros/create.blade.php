@@ -14,7 +14,7 @@
 		<div class="row">
 			<div class="col-xs-12">
 				<!--Inicio do Formulário-->
-				<form class="form-horizontal" method="post">
+				<form class="form-horizontal" method="post" action="{{route('membros.store')}}">
 					<!--Nome do Cadêmico-->
 					<div class="form-group">
 						<legend>Dados Pessoais</legend>
@@ -33,7 +33,7 @@
 						
 						<label for="org" class="col-xs-1">Orgão Emissor</label>
 						<div class="col-xs-2">
-							<input type="text" class="form-control" name="org" placeholder="Ex.: SSP / MD">
+							<input type="text" class="form-control" name="orgaoEmissor" placeholder="Ex.: SSP / MD">
 						</div>
 						
 						<label for="cpf" class="col-xs-1">CPF:</label>
@@ -51,11 +51,11 @@
 
 						<label for="cel" class="col-xs-1">Celular:</label>
 						<div class="col-xs-2">
-							<input type="text" class="form-control" name="cel" placeholder="Ex.: (000)0000-0000" size=14/>
+							<input type="text" class="form-control" name="fone" placeholder="Ex.: (000)0000-0000" size=14/>
 						</div>
 						<label for="emer" class="col-xs-1">Contato Emergência:</label>
 						<div class="col-xs-2">
-							<input type="text" class="form-control" name="emer" placeholder="Ex.: (000)0000-0000" size=14/>
+							<input type="text" class="form-control" name="foneEmerg" placeholder="Ex.: (000)0000-0000" size=14/>
 						</div>
 					</div>
 
@@ -64,10 +64,10 @@
 						<label for="tipo" class="col-xs-2 control-label"> <p class="text-left">Instituição:</p></label>
 						<div class="col-xs-10">
 							<select class="form-control">
-								<option>ULBRA</option>
-								<option>UNIR</option>
-								<option>IFRO</option>
-								<option>OUTROS</option>
+								@foreach ($insts as $inst)
+
+									<option value="{{$inst->id}}">{{$inst->nome}}</option>
+								@endforeach
 							</select>
 						</div>
 					</div>
@@ -95,10 +95,10 @@
 							<label for="tipo" class="col-xs-2 control-label">Situação:</label>
 							<div class="col-xs-2">
 								<label class="radio-inline">
-									<input type="radio" name="optradio">Ativo
+									<input type="radio" name="ativo">Ativo
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="optradio">Não Ativo
+									<input type="radio" name="ativo">Não Ativo
 								</label>
 							</div>
 					</div>
@@ -137,12 +137,7 @@
 			</div>
 		</div>
 	</div>
-	<?php 
-		if (isset($_POST['nome']))
-		{
-			echo $_POST['nome'];
-		}
-	?>
+
 
 	<script src="js/jquery-1.11.3.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Instituicao;
 use App\Membro;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class MembrosController extends Controller
 {
@@ -15,9 +17,18 @@ class MembrosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
-        return view('membros.index');
+        $membros = Membro::all();
+
+        //dd($membros);
+
+        return view('membros.index', compact('membros'));
     }
 
     /**
@@ -27,8 +38,12 @@ class MembrosController extends Controller
      */
     public function create()
     {
-        return view('membros.create');
+        $insts = Instituicao::all();
+        //dd($insts);
+
+        return view('membros.create',compact('insts'));
     }
+
 
     /**
      * Store a newly created resource in storage.
