@@ -13,9 +13,11 @@
 
 Route::get('/', 'MembrosController@Index');
 
-//Route::post('login/login', 'Auth\AuthController@postLogin');
+Route::get('/membros/show', 'MembrosController@Show');
+Route::get('/membros/edit', 'MembrosController@Edit');
+Route::get('/membros/delete', 'MembrosController@Destroy');
 
-Route::resource('/instituicao', 'InstituicaoController@create');
+Route::get('/instituicao/edit', 'InstituicaoController@Edit');
 
 Route::resource('membros', 'MembrosController');
 

@@ -14,10 +14,8 @@ class CreateMembrosTable extends Migration
     {
         Schema::create('membros', function (Blueprint $table) {
             $table->increments('id');
-
             $table->integer('id_Inst')->unsigned();
             $table->foreign('id_inst')->references('id')->on('instituicaos');
-
             $table->string('nome', 40);
             $table->string('cpf', 14)->unique();
             $table->string('rg', 10);
@@ -27,12 +25,18 @@ class CreateMembrosTable extends Migration
             $table->string('email', 40)->unique();
             $table->string('anoCadastro', 6);
             $table->boolean('ativo');
-            $table->tinyInteger('contDias');
+            $table->tinyInteger('qtdDias');
 
             $table->string('rua', 60);
             $table->smallInteger('numero');
             $table->string('bairro', 20);
-            $table->string('cidade', 20);
+            $table->string('cidade', 40);
+
+            $table->boolean('dia[segunda]');
+            $table->boolean('dia[terca]');
+            $table->boolean('dia[quarta]');
+            $table->boolean('dia[quinta]');
+            $table->boolean('dia[sexta]');
 
             $table->timestamps();
         });

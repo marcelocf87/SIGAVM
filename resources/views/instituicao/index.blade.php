@@ -13,43 +13,24 @@
             <thead>
             <tr>
                 <th>#</th>
-                <th>Código</th>
                 <th>Nome</th>
-                <th>Contato</th>
+                <th>Fone</th>
                 <th>E-mail</th>
             </tr>
             </thead>
             <tbody>
-            {{--    @foreach($instituicaos as $instituicao)--}}
-            <tr>
-                <th scope="row">1</th>
-                {{--<td>{{ $instituicao->id }}</td>--}}
-                {{--<td>{{ $instituicao->rg }}</td>--}}
-                {{--<td>{{ $instituicao->cpf }}</td>--}}
-                {{--<td>{{ $instituicao->fone }}</td>--}}
-                {{--<td>{{ $instituicao->foneEmerg }}</td>--}}
-                {{--<td>{{ $instituicao->id_Inst }}</td>--}}
-                {{--<td>{{ $instituicao->ativo }}</td>--}}
-                <td>001</td>
-                <td>Centro Universitário Luterado de Ji-Paraná</td>
-                <td>(069)0000-0000</td>
-                <td>ceulji.central@outlook.com</td>
-            </tr>
-            {{--@endforeach--}}
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-            </tr>
+            <?php $count = 0 ?>
+            @foreach($instituicaos as $instituicao)
+                <tr>
+                    <td>{{++$count}}</td>
+                    <td>{{ $instituicao->nome }}</td>
+                    <td>{{ $instituicao->fone }}</td>
+                    <td>{{ $instituicao->email }}</td>
+                    <td><a href="" class="btn btn-primary">Detalhes</a> </td>
+                    <td><a href="{{ route('instituicao.edit', $instituicao->id) }}" class="btn btn-success">Editar</a> </td>
+                    <td><a href="" class="btn btn-danger">Deletar</a> </td>
+                </tr>
+            @endforeach
             </tbody>
         </table>
     </div>

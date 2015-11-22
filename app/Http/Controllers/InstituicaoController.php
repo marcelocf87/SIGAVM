@@ -15,9 +15,18 @@ class InstituicaoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        return view('instituicao.index');
+        $instituicaos = instituicao::all();
+
+        //dd($instituicaos);
+
+        return view('instituicao.index', compact('instituicaos'));
     }
 
     /**
@@ -39,8 +48,9 @@ class InstituicaoController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-
-        Instituicao::create($input);
+        $instituicao = new Instituicao();
+        $instituicao->create($input);
+        return redirect('instituicao');
     }
 
     /**
@@ -62,9 +72,9 @@ class InstituicaoController extends Controller
      */
     public function edit($id)
     {
-        $instituicao = instituicao::find($id);
+        $instituicao = Instituicao::findOrFail($id);
 
-        return view('instituicao.edit', array('instituicao' => $instituicao));
+        return view('/instituicao.edit', array('instituicao' => $instituicao));
     }
 
     /**
@@ -81,6 +91,7 @@ class InstituicaoController extends Controller
         $instituicao = instituicao::find($id);
         $instituicao->fill($input);
         $instituicao->save();
+        return redirect('/instituicao');
     }
 
     /**

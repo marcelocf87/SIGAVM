@@ -47,26 +47,26 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Início</a></li>
-                <li><a href="#about">Consultar</a></li>
-                <li><a href="#contact">Cadastrar</a></li>
+                <li class="active"><a href="/">Início</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Consultar <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li><a href="/membros">Membros</a></li>
+                        <li><a href="/instituicao">Instituição</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastrar <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/membros/create">Membros</a></li>
+                        <li><a href="/instituicao/create">Instituição</a></li>
                     </ul>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="../navbar/">Default</a></li>
-                <li><a href="../navbar-static-top/">Static top</a></li>
-                <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+                {{--<li><a href="../navbar/">Default</a></li>--}}
+                {{--<li><a href="../navbar-static-top/">Static top</a></li>--}}
+                <li class="active"><a href="/auth/logout">Logout <span class="sr-only">(current)</span></a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -82,9 +82,24 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+
+{{--<script src="/bootstrap/js/jquery-1.11.3.min.js"></script>--}}
+{{--<script src="/bootstrap/js/bootstrap.min.js"></script>--}}
+{{--<script src="/bootstrap/js/main.js"></script>--}}
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="../../dist/js/bootstrap.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+{{--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>--}}
+
+<script type="text/javascript" src="/jss/jquery.mask.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('.phone').mask('(00) 0000-0000');
+        $('.cpf').mask('000.000.000-00');
+        $('.anoCad').mask('0000/0');
+    });
+</script>
+
 </body>
 </html>

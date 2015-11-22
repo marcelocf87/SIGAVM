@@ -25,9 +25,6 @@ class MembrosController extends Controller
     public function index()
     {
         $membros = Membro::all();
-
-        //dd($membros);
-
         return view('membros.index', compact('membros'));
     }
 
@@ -55,7 +52,20 @@ class MembrosController extends Controller
     {
         $input = $request->all();
 
-        Membro::create($input);
+        $contDias = 0;
+
+        if(isset($request->dia)) {
+            $contDias = count($request->dia);
+        }
+
+        $membro = new Membro();
+
+        $input['qtdDias']=$contDias;
+        //dd($input);
+
+        $membro->create($input);
+        return redirect('membros');
+
     }
 
     /**
@@ -66,7 +76,13 @@ class MembrosController extends Controller
      */
     public function show($id)
     {
-        //
+//        $membros = Membro::all();
+//        return view('membros.show', compact('membros'));
+
+        $membros = Membro::findOrFail($id);
+        return view('membros.show', compact('membros'));
+
+//        return view('membros.show', array('membros' => $membros));
     }
 
     /**
@@ -77,9 +93,10 @@ class MembrosController extends Controller
      */
     public function edit($id)
     {
-        $membro = Membro::find($id);
+        $membro = Membro::findOrFail($id);
+        $insts = Instituicao::all();
 
-        return view('membro.edit', array('Membro' => $membro));
+        return view('membros.edit', array('membro' => $membro, 'insts' => $insts));
     }
 
     /**
@@ -91,11 +108,10 @@ class MembrosController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $membro = membro::findOrFail($id);
         $input = $request->all();
-
-        $membro = Membro::find($id);
-        $membro->fill($input);
-        $membro->save();
+        $membro->fill($input)->save();
+        return redirect('/membros');
     }
 
     /**
@@ -106,6 +122,9 @@ class MembrosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $membro = membro::findOrFail($id);
+        $membro->delete();
+
+        return redirect('/membros');
     }
 }

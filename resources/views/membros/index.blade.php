@@ -10,18 +10,15 @@
                     <br>
                 </div>
 
-
                  <div class="table-responsive">   {{--}} <label>{{ sizeof($membros) }}</label>--}}
                     <table class="table table-striped">
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Código</th>
                             <th>Nome</th>
                             <th>RG</th>
                             <th>CPF</th>
                             <th>Contato</th>
-                            <th>Contato de Emerg</th>
                             <th>E-mail</th>
                             <th>Instituição</th>
                             <th>Ano Cad</th>
@@ -32,18 +29,26 @@
                             <?php $count = 0 ?>
                             @foreach($membros as $membro)
                                     <tr>
+
                                         <td>{{++$count}}</td>
-                                        <td>{{ $membro->id }}</td>
-                                        <td>{{$membro->nome}}</td>
+                                        <td>{{ $membro->nome }}</td>
                                         <td>{{ $membro->rg }}</td>
                                         <td>{{ $membro->cpf }}</td>
                                         <td>{{ $membro->fone }}</td>
-                                        <td>{{ $membro->foneEmerg }}</td>
+                                        <td>{{ $membro->email }}</td>
                                         <td>{{ $membro->id_Inst }}</td>
+                                        <td>{{ $membro->anoCadastro }}</td>
                                         <td>{{ $membro->ativo }}</td>
+                                        <td><a href="{{ route('membros.show', $membro->id) }}" class="btn btn-primary">Detalhes</a> </td>
+                                        <td><a href="{{ route('membros.edit', $membro->id) }}" class="btn btn-success">Editar</a> </td>
+{{--                                        <td><a href="{{ route('membros.delete', $membro->id) }}" class="btn btn-danger">Deletar</a> </td>--}}
+                                        <td><form method="POST" accept-charset="UTF-8" action="/membros/delete/{{ $membro->id }}">
+                                            <button type="submit" class="btn btn-sm btn-danger">Deletar</button>
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                        </form></td>
                                      </tr>
                             @endforeach
-
                         </tbody>
                     </table>
                  </div>

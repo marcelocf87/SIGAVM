@@ -13,13 +13,14 @@
 		<div class="row">
 			<div class="col-xs-12">
 				<!--Inicio do Formulário-->
-				<form class="form-horizontal" method="post">
+				<form class="form-horizontal" method="post" action="{{route('instituicao.store')}}">
+					{{ csrf_field() }}
 					<!--Nome do Acadêmico-->
 					<div class="form-group">
 						<legend>Dados da Instituição de Ensino</legend>
-						<label for="nomeinst" class="col-xs-2 control-label"><p class="text-left">Nome da Instuição de Ensino:</p></label>
+						<label for="nomeinst" class="col-xs-2"><p class="text-left">Nome da Instuição de Ensino:</p></label>
 						<div class="col-xs-10">
-							<input type="text" class="form-control" name="nomeinst" placeholder="Ex.: Centro Universitário... / Universidade Federal..." />
+							<input type="text" class="form-control" name="nome" placeholder="Ex.: Centro Universitário... / Universidade Federal..." />
 						</div>
 					</div>
 
@@ -27,12 +28,12 @@
 					<div class="form-group">
 						<label for="emailinst" class="col-xs-2 control-label"><p class="text-left">E-mail:</p></label>
 						<div class="col-xs-4">
-							<input type="text" class="form-control" name="emailinst" placeholder="Ex.: email@outlook.com / email@gmail.com" />
+							<input type="text" class="form-control" name="email" placeholder="Ex.: email@outlook.com / email@gmail.com" />
 						</div>
 
-						<label for="telinst" class="col-xs-1">Telefone:</label>
+						<label for="telinst" class="col-xs-1 control-label">Fone:</label>
 						<div class="col-xs-2">
-							<input type="text" class="form-control" name="telinst" placeholder="Ex.: (000)0000-0000" />
+							<input type="text" class="form-control phone" name="fone" placeholder="Ex.: (00) 0000-0000" />
 						</div>
 					</div>
 
@@ -41,22 +42,22 @@
 						<legend>Endereço</legend>
 						<label for="ruainst" class="col-xs-2 control-label"><p class="text-left">Rua:</p></label>
 						<div class="col-xs-4">
-							<input type="text" class="form-control" name="ruainst" placeholder="Rua" />
+							<input type="text" class="form-control" name="rua" placeholder="Rua / Av..." />
 						</div>
-						<label for="ninst" class="col-xs-1 control-label">Número</label>
+						<label for="ninst" class="col-xs-1 control-label">Número:</label>
 						<div class="col-xs-2">
-							<input type="text" class="form-control" name="ninst" placeholder="Número" />
+							<input type="text" class="form-control" name="numero" placeholder="Número" />
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label for="bairroinst" class="col-xs-2 control-label"><p class="text-left">Bairro:</p></label>
 						<div class="col-xs-4">
-							<input type="text" class="form-control" name="bairroinst" placeholder="Bairro" />
+							<input type="text" class="form-control" name="bairro" placeholder="Bairro / Setor" />
 						</div>
 						<label for="cidadeinst" class="col-xs-1 control-label">Cidade:</label>
 						<div class="col-xs-2">
-							<input type="text" class="form-control" name="cidadeinst" placeholder="Cidade" />
+							<input type="text" class="form-control" name="cidade" placeholder="Cidade, UF" />
 						</div>
 					</div>
 
@@ -70,15 +71,4 @@
 			</div>
 		</div>
 	</div>
-	<?php 
-		if (isset($_POST['nome']))
-		{
-			echo $_POST['nome'];
-		}
-
-	?>
-
-	<script src="js/jquery-1.11.3.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/main.js"></script>      
 @endsection
