@@ -122,7 +122,7 @@ class MembrosController extends Controller
      */
     public function destroy($id)
     {
-        $membro = membro::findOrFail($id);
+        $membro = Membro::findOrFail($id);
         $membro->delete();
 
         return redirect('/membros');
