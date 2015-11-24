@@ -38,7 +38,7 @@
                                         <td>{{ $membro->email }}</td>
                                         <td>{{ $membro->id_Inst }}</td>
                                         <td>{{ $membro->anoCadastro }}</td>
-                                        <td>{{ $membro->ativo }}</td>
+                                        <td>{{ $membro->ativo  == 1 ? 'Ativo':'Inativo' }}</td>
                                         <td><a href="{{ route('membros.show', $membro->id) }}" class="btn btn-primary">Detalhes</a> </td>
                                         <td><a href="{{ route('membros.edit', $membro->id) }}" class="btn btn-success">Editar</a> </td>
 {{--                                        <td><a href="{{ route('membros.delete', $membro->id) }}" class="btn btn-danger">Deletar</a> </td>--}}

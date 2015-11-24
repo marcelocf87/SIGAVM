@@ -24,7 +24,7 @@ class MembrosController extends Controller
     
     public function index()
     {
-        $membros = Membro::all();
+        $membros = Membro::all()->sortBy('nome');
         return view('membros.index', compact('membros'));
     }
 
