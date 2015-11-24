@@ -16,9 +16,9 @@ Route::get('/', 'MembrosController@Index');
 Route::get('/membros/show', 'MembrosController@Show');
 Route::get('/membros/edit', 'MembrosController@Edit');
 Route::get('/membros/delete', 'MembrosController@Destroy');
-Route::post('/membros/delete', 'MembrosController@Destroy');
 
 Route::get('/instituicao/edit', 'InstituicaoController@Edit');
+Route::get('/instituicao/delete', 'InstituicaoController@Destroy');
 
 Route::resource('membros', 'MembrosController');
 

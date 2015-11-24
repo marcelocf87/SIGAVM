@@ -24,8 +24,6 @@ class InstituicaoController extends Controller
     {
         $instituicaos = instituicao::all();
 
-        //dd($instituicaos);
-
         return view('instituicao.index', compact('instituicaos'));
     }
 
@@ -50,7 +48,7 @@ class InstituicaoController extends Controller
         $input = $request->all();
         $instituicao = new Instituicao();
         $instituicao->create($input);
-        return redirect('instituicao');
+        return redirect('/instituicao');
     }
 
     /**
@@ -102,8 +100,9 @@ class InstituicaoController extends Controller
      */
     public function destroy($id)
     {
-        $instituicao = instituicao::findOrFail($id);
+        $instituicao = Instituicao::findOrFail($id);
         $instituicao->delete();
+
         return redirect('/instituicao');
     }
 }

@@ -29,7 +29,6 @@
                             <?php $count = 0 ?>
                             @foreach($membros as $membro)
                                     <tr>
-
                                         <td>{{++$count}}</td>
                                         <td>{{ $membro->nome }}</td>
                                         <td>{{ $membro->rg }}</td>
@@ -39,11 +38,10 @@
                                         <td>{{ $membro->id_Inst }}</td>
                                         <td>{{ $membro->anoCadastro }}</td>
                                         <td>{{ $membro->ativo }}</td>
-                                        <td><a href="{{ route('membros.show', $membro->id) }}" class="btn btn-primary">Detalhes</a> </td>
-                                        <td><a href="{{ route('membros.edit', $membro->id) }}" class="btn btn-success">Editar</a> </td>
-{{--                                        <td><a href="{{ route('membros.delete', $membro->id) }}" class="btn btn-danger">Deletar</a> </td>--}}
+                                        <td><a href="{{ route('membros.show', $membro->id) }}" class="btn btn-sm btn-primary">Detalhes</a> </td>
+                                        <td><a href="{{ route('membros.edit', $membro->id) }}" class="btn btn-sm btn-success">Editar</a> </td>
                                         <td><form method="POST" accept-charset="UTF-8" action="/membros/{{ $membro->id }}">
-                                            <button type="submit" class="btn btn-danger">Deletar</button>
+                                            <button type="submit" class="btn btn-sm btn-danger">Deletar</button>
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
                                         </form></td>

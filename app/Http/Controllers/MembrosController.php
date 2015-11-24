@@ -76,11 +76,15 @@ class MembrosController extends Controller
      */
     public function show($id)
     {
-//        $membros = Membro::all();
+        $membros = Membro::all();
+        return view('membros.show', compact('membros'));
+
+//        $membros = new Membro();
+//        $mem = $membros->find($id);
 //        return view('membros.show', compact('membros'));
 
-        $membros = Membro::findOrFail($id);
-        return view('membros.show', compact('membros'));
+//        $membros = Membro::findOrFail($id);
+//        return view('membros.show', compact('membros'));
 
 //        return view('membros.show', array('membros' => $membros));
     }
@@ -108,7 +112,7 @@ class MembrosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $membro = membro::findOrFail($id);
+        $membro = Membro::findOrFail($id);
         $input = $request->all();
         $membro->fill($input)->save();
         return redirect('/membros');

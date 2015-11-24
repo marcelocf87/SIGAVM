@@ -28,7 +28,7 @@
 					<div class="form-group"> 
 						<label for="rg" class="col-xs-2 control-label"><p class="text-left">RG:</p></label>
 						<div class="col-xs-4">
-							<input type="text" class="form-control" name="rg" placeholder="RG" size=14 />
+							<input type="text" class="form-control" name="rg" placeholder="RG" size=10 />
 						</div>
 						
 						<label for="org" class="col-xs-1">Orgão Emissor:</label>
