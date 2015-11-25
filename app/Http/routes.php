@@ -11,12 +11,17 @@
 |
 */
 
-Route::get('/', 'MembrosController@Index');
+//Route::get('/', function () {
+//    return view('layouts.home');
+//});
+
+Route::resource('/', 'MembrosController');
 
 Route::get('/membros/show', 'MembrosController@Show');
 Route::get('/membros/edit', 'MembrosController@Edit');
 Route::get('/membros/delete', 'MembrosController@Destroy');
 
+Route::get('/instituicao/show', 'InstituicaoController@Show');
 Route::get('/instituicao/edit', 'InstituicaoController@Edit');
 Route::get('/instituicao/delete', 'InstituicaoController@Destroy');
 

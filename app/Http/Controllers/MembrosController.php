@@ -24,7 +24,7 @@ class MembrosController extends Controller
     
     public function index()
     {
-        $membros = Membro::all();
+        $membros = Membro::all()->sortBy('nome');
         return view('membros.index', compact('membros'));
     }
 
@@ -76,17 +76,11 @@ class MembrosController extends Controller
      */
     public function show($id)
     {
-        $membros = Membro::all();
-        return view('membros.show', compact('membros'));
 
-//        $membros = new Membro();
-//        $mem = $membros->find($id);
-//        return view('membros.show', compact('membros'));
+        $membros = new Membro();
+        $membro = $membros->find($id);
+        return view('membros.show', compact('membro'));
 
-//        $membros = Membro::findOrFail($id);
-//        return view('membros.show', compact('membros'));
-
-//        return view('membros.show', array('membros' => $membros));
     }
 
     /**

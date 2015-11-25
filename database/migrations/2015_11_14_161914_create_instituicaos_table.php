@@ -20,7 +20,7 @@ class CreateInstituicaosTable extends Migration
 
             $table->string('rua', 60);
             $table->smallInteger('numero');
-            $table->string('bairro', 20);
+            $table->string('bairro', 30);
             $table->string('cidade', 20);
 
             $table->timestamps();

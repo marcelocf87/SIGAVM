@@ -59,7 +59,9 @@ class InstituicaoController extends Controller
      */
     public function show($id)
     {
-        //
+        $instituicaos = new Instituicao();
+        $instituicao = $instituicaos->find($id);
+        return view('instituicao.show', compact('instituicao'));
     }
 
     /**

@@ -38,6 +38,7 @@
                                         <td>{{ $membro->id_Inst }}</td>
                                         <td>{{ $membro->anoCadastro }}</td>
                                         <td>{{ $membro->ativo }}</td>
+                                        <td>{{ $membro->ativo  == 1 ? 'Ativo':'Inativo' }}</td>
                                         <td><a href="{{ route('membros.show', $membro->id) }}" class="btn btn-sm btn-primary">Detalhes</a> </td>
                                         <td><a href="{{ route('membros.edit', $membro->id) }}" class="btn btn-sm btn-success">Editar</a> </td>
                                         <td><form method="POST" accept-charset="UTF-8" action="/membros/{{ $membro->id }}">

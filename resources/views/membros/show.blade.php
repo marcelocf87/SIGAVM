@@ -16,7 +16,6 @@
                         <legend> Dados Pessoais </legend>
                         <thead>
                         <tr>
-                            <th>#</th>
                             <th>Código</th>
                             <th>Nome</th>
                             <th>RG</th>
@@ -32,51 +31,44 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <?php $count = 0 ?>
-                        @foreach($membros as $membro)
-                            <tr>
-                                <td>{{++$count}}</td>
-                                <td>{{ $membro->id }}</td>
-                                <td>{{ $membro->nome }}</td>
-                                <td>{{ $membro->rg }}</td>
-                                <td>{{ $membro->orgaoEmissor }}</td>
-                                <td>{{ $membro->cpf }}</td>
-                                <td>{{ $membro->fone }}</td>
-                                <td>{{ $membro->foneEmerg }}</td>
-                                <td>{{ $membro->email }}</td>
-                                <td>{{ $membro->id_Inst }}</td>
-                                <td>{{ $membro->anoCadastro }}</td>
-                                <td>{{ $membro->qtdDias }}</td>
-                                <td>{{ $membro->ativo }}</td>
-                            </tr>
-                        @endforeach
+                        <tr>
+                            <td>{{ $membro->id }}</td>
+                            <td>{{ $membro->nome }}</td>
+                            <td>{{ $membro->rg }}</td>
+                            <td>{{ $membro->orgaoEmissor }}</td>
+                            <td>{{ $membro->cpf }}</td>
+                            <td>{{ $membro->fone }}</td>
+                            <td>{{ $membro->foneEmerg }}</td>
+                            <td>{{ $membro->email }}</td>
+                            <td>{{ $membro->id_Inst }}</td>
+                            <td>{{ $membro->anoCadastro }}</td>
+                            <td>{{ $membro->qtdDias }}</td>
+                            <td>{{ $membro->ativo }}</td>
+                        </tr>
                         </tbody>
 
                         {{--Tabela de enderecos--}}
                         <table class="table table-striped">
-                        <legend> Endereço </legend>
-                        <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Rua</th>
-                            <th>Numero</th>
-                            <th>Bairro</th>
-                            <th>Cidade</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php $count = 0 ?>
-                        @foreach($membros as $membro)
+                            <br>
+                            <br>
+                            <legend> Endereço </legend>
+                            <thead>
                             <tr>
-                                <td>{{++$count}}</td>
+                                <th>Rua</th>
+                                <th>Número</th>
+                                <th>Bairro</th>
+                                <th>Cidade</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>w
                                 <td>{{ $membro->rua }}</td>
                                 <td>{{ $membro->numero }}</td>
                                 <td>{{ $membro->bairro }}</td>
                                 <td>{{ $membro->cidade }}</td>
                             </tr>
-                        @endforeach
-                        </tbody>
-
+                            </tbody>
+                        </table>
                     </table>
                 </div>
             </div>
